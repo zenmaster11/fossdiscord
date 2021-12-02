@@ -36,6 +36,7 @@ pub fn userGet(num: i32) -> Json<UserPayload> {
     let inst = users.filter(id.eq(num)).first::<User>(&connection).unwrap_or_else(|_|User {
         id: -1,
         username: "a3802".to_string(),
+        password: "".to_string(), // somehow hide this just to get rid of confusion
         discriminator: 0000,
         unixCreationTime: 0
     }); // placeholder response

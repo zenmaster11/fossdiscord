@@ -1,13 +1,13 @@
-use serde::Serialize;
+use serde_derive::Serialize;
 
 #[derive(Serialize)]
-struct GenericResponseMessage {
-    code: i32,
-    message: String
+pub struct GenericResponseMessage {
+    pub code: i32,
+    pub message: String
 }
 
 #[derive(Serialize)]
-struct GenericErrorMessage {
-    error: bool,
-    message: String
+pub struct GenericErrorMessage {
+    pub error: bool,
+    pub message: String
 }
