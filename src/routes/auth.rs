@@ -1,4 +1,3 @@
-
 extern crate bcrypt;
 
 use crate::generic::{GenericResponseMessage, GenericErrorMessage};
@@ -14,7 +13,7 @@ use rocket::request::Form;
 use rocket_contrib::json::Json;
 use bcrypt::{DEFAULT_COST, hash, verify};
 use std::time::{SystemTime, UNIX_EPOCH};
-
+use rand::Rng;
 
 #[get("/")]
 pub fn index() -> Json<GenericResponseMessage> {
@@ -58,7 +57,7 @@ pub fn register(registerForm: Form<RegisterForm>) -> Json<GenericErrorMessage> {
     let newUser = NewUser {
         username: userUsername.to_string(),
         password: hash("hunter2", DEFAULT_COST).unwrap(),
-        discriminator: 0000,
+        discriminator: rand::thread_rng().gen_range(1000..10000),
         unixCreationTime: 0
     };
 

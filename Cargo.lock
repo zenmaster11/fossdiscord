@@ -80,6 +80,7 @@ dependencies = [
  "bcrypt",
  "diesel",
  "dotenv",
+ "rand",
  "rocket",
  "rocket_contrib",
  "serde",
