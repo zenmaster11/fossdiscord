@@ -1,0 +1,8 @@
+CREATE TABLE `users` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`username` VARCHAR(20) NULL DEFAULT NULL,
+	`password` VARCHAR(60) NULL DEFAULT NULL,
+	`discriminator` INT(4) NULL DEFAULT NULL,
+	`unixCreationTime` INT(11) NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)
